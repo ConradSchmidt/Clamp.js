@@ -38,7 +38,7 @@
       },
 
       sty = element.style,
-      originalText = element.innerHTML,
+      originalText = element.innerHTML = element.innerHTML.substring(0, options.maxCharacters || Number.MAX_VALUE),
 
       supportsNativeClamp = typeof(element.style.webkitLineClamp) != 'undefined',
       clampValue = opt.clamp,
